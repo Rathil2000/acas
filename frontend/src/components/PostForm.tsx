@@ -161,7 +161,8 @@ const PostForm = ({ account }: { account: Address | undefined }) => {
 	useEffect(() => {
 		const fetchPosts = async () => {
 			const posts = await allPosts();
-			setPosts(posts);
+            setPosts(posts as PostDetails[]);
+			// setPosts(posts);
 		};
 		if (!isPostSubmitting) {
 			fetchPosts();
